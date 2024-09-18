@@ -1,0 +1,41 @@
+{
+  "name": "bun_29",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon",
+    "dev:test": "rsbuild dev --open",
+    "build": "rsbuild build && bun run build:server",
+    "build:server": "bun build --target=node --minify src/index.ts --outfile dist/index.js",
+    "build:serverTest": "bun rsbuild build --config custom.config.ts",
+    "build:test": "",
+    "clean": "rimraf dist",
+    "preview:test": "rsbuild preview",
+    "start": "bun run dist/index.js"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "axios": "^1.7.5",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "framer-motion": "^11.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.0.1",
+    "@rsbuild/plugin-react": "^1.0.1",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.4",
+    "postcss": "^8.4.47",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.5.2"
+  }
+}
